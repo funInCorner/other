@@ -202,18 +202,21 @@ function drawtran(id){
 			startPoint -= Math.PI*2*(data[i]/100);
 	}
 	
+	//画第二个同心圆的圆
 	ctx.fillStyle = "#FFFFFF";
 	ctx.strokeStyle ="#FFFFFF";
 	ctx.beginPath();
-	ctx.arc(20,20,10,0,Math.PI*2);
+	ctx.arc(20,20,8,0,Math.PI*2);
 	ctx.fill();
 	ctx.stroke();
 	
+	//最外层的白色框
 	ctx.fillStyle = "#FFFFFF";
 	ctx.beginPath();
 	ctx.arc(20,20,19,0,Math.PI*2);
 	ctx.stroke();
 	
+	//中间一点黑，哈哈
 	ctx.fillStyle = "#333333";
 	ctx.beginPath();
 	ctx.arc(20,20,5,0,Math.PI*2);
