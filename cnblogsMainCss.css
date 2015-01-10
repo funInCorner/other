@@ -5,13 +5,13 @@ body{font-size:14px;background:url('http://images.cnblogs.com/cnblogs_com/fsong/
 .clear{clear:both;}
 /**最外层**/
 #home{/*border:1px solid red;width:100%;*/max-width:100%;z-index: 10;
-position: relative;margin:10px auto;padding:0px 10px;  opacity: 0.8;}
+position: relative;margin:10px auto;padding:0px 10px;  opacity: 0.99;}
 
 #header{padding-left: 0px;}
-#lnkBlogLogo{left:-20px;background: #08c;}
+#lnkBlogLogo{left:-20px;background: #3181B2;}
 #blogTitle a:hover{width: 40px;left:-40px;}
 #header #blogTitle a{text-decoration:none;}
-a#Header1_HeaderTitle{font-size:30px;color:#08c;text-shadow: 0 0 10px #222;}
+a#Header1_HeaderTitle{font-size:30px;color:#3181B2;text-shadow: 0 0 10px #222;}
 a#Header1_HeaderTitle:hover{color:#FFF;text-shadow: 0 0 15px #FF3366;}
 #blogTitle h1{display: inline-block;}
 #blogTitle h2{display: inline-block;font-size: 14px;padding:10px 0 0 0;font-weight: normal;}
@@ -19,17 +19,31 @@ a#Header1_HeaderTitle:hover{color:#FFF;text-shadow: 0 0 15px #FF3366;}
 #navigator{clear:both;}
 ul#navList{list-style: none;margin: 0px;padding: 0px;float: left;}
 ul#navList li{display: block;}
-a.menu:link,a.menu:visited{color:#08c!important;}
-a.menu:hover{color:#08c!important;text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 40px #FF3366, 0 0 50px #FF3366;}
+a.menu:link,a.menu:visited{color:#3181B2!important;}
+a.menu:hover{border-bottom: 2px solid #3181B2;}
 .blogStats{padding-top:25px;}
 #main{overflow: hidden;clear: both;padding: 0px!important;}
-.postTitle{border-left:10px solid #08c;background: none;}
-.postCon a{color: #08c;}
-.postCon a:hover{background-color:#08c;color:#fff}
-.catListTag a{background:#08c!important;color: #FFF}
-.topicListFooter a{color: #08c;}
-#footer{border:none;text-align: left;}
-#sideBar a:hover{color:#08c;}
+.dayTitle{background: #3181B2;}
+.postTitle{border-left:5px solid #3181B2;background: none;}
+.postCon a,.postBody a,.c_b_p_desc_readmore{color: #3181B2!important;}
+.postCon a:hover,.postBody a:hover,a.c_b_p_desc_readmore:hover{background-color:#3181B2!important;color:#fff!important;}
+.dayTitle a:hover{color:#EA957D;}
+.catListTag a{background: none;color: #333;padding:5px; }
+.catListTag a:hover{border-bottom:1px solid #3181B2;}
+#comment_nav{background:#3181B2!important;color: #FFF}
+.topicListFooter a{color: #3181B2;}
+#footer{border-top:1px solid #3181B2;margin:0px;text-align: left;}
+#sideBar a:hover{color:#3181B2;}
+/**sideBar**/
+.newsItem,#leftcontentcontainer>div{border:0px solid #3983CB;}
+.newsItem,#leftcontentcontainer>div{padding:0px;}
+.catListTitle,.CalTitle{border-bottom: 2px solid #3181B2;}
+#blogCalendar a{padding:2px;background: #3181B2;color:#FFF;}
+#blogCalendar a:hover{background: #FFF;color:#000;}
+.catListEssay a:link,.catListEssay ul li a:visited{display: block;padding:5px 0;}
+.catListEssay a:hover{display: block;padding:5px 0;background:#3181B2!important;color:#FFF!important; }
+.catListPostCategory a,.catListPostArchive a,.catListArticleCategory a{display: block;padding:5px 0px; }
+
 /**css3 background slidershow**/
 .cb-slideshow,
 .cb-slideshow:after { 
