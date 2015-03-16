@@ -43,9 +43,6 @@ public function actionView($id)
 
 ## 过滤器 <span id="filters"></span>
 
-Most RESTful API features provided by [[yii\rest\Controller]] are implemented in terms of [filters](structure-filters.md).
-In particular, the following filters will be executed in the order they are listed:
-
 许多RESTful接口的功能是实现部分[过滤器](structure-filters.md)的[[yii\rest\Controller]]提供的。特别是,以下的过滤器将会依序处理：
 
 * [[yii\filters\ContentNegotiator|contentNegotiator]]:支持内容协商，在[Response Formatting](rest-response-formatting.md)部分有讲解；
