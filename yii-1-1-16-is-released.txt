@@ -1,19 +1,21 @@
-Yii 1.1.16 is released
 
-We are very pleased to announce that Yii Framework version 1.1.16 is released. You can download it at yiiframework.com/download/.
+Yii 1.1.6 发布了
 
-In this release, we have included more than 120 enhancements and bug fixes. For the complete list of changes in this release, please see the change log. NOTE This release contains changes that break backward compatibility. Please read the upgrading instructions to learn how to upgrade.
 
-We would like to express our gratitude to all contributors who have spent their precious time helping improve Yii and made this release possible.
+我们非常高兴的宣布Yii 框架 1.1.6 已经发布了。你可以在http://yiiframework.com/download/ 下载它。
 
-Please note that Yii 1.1 is currently under maintenance mode, which means it will not introduce major new features in the future. We are currently actively developing and maintaining Yii 2.0 which represents a new generation of PHP framework utilizing the latest technologies. You may follow the development progress of Yii 2 by starring or watching Yii 2.0 GitHub Project. You may also follow Yii Twitter feeds or join Yii Facebook group to connect with other Yii developers.
+在这个版本中，我们已经包含了超过120个改进和bug修复。在这个版本中完整的修改，请看修改日志。注意这个版本包含的变化是不向后兼容。请阅读更新介绍来学习如何升级。
 
-Below we will summarize some of the main enhancements introduced in this release.
-Database and ActiveRecord
+我们想要对所有投稿者和使用他们宝贵的时间来帮助提高Yii 和保证这个版本合理发布的人表达我们的感谢。
 
-Database support is evolving constantly in Yii. This time we've added official support for MariaDB and CUBRID databases.
+请注意Yii 1.1 目前是维护模式，也就意味着以后它不会引进主要的新功能。我们目前正在积极的开发和维护Yii 2.0体现出一个新的PHP框架使用了最新的技术。你可以通过Star或者watch Yii 2.0 GitHub的项目来跟随Yii 2.0的开发进度。你也可以跟随Yii推特订阅或者加入Yii Facebook组来联系其它Yii 开发者。
 
-ODBC now could be used in connections via pdo_odbc like the following:
+下面我们将概述这个发行版的一些主要改进介绍。
+数据库和ActiveRecord
+
+数据库支持在Yii中不断演化。此时我们添加了MariaDb和CUBRID数据库的官方支持。
+
+ODBC 现在可以使用connections通过pdo_odbc，就像下面这样 :
 
 'components'=>array(
     ......
@@ -26,7 +28,7 @@ ODBC now could be used in connections via pdo_odbc like the following:
     ),
 ),
 
-When defining STAT relation one could use scopes:
+当定义STAT关系和 一个可以使用范围:
 
 public function relations()
 {
@@ -35,7 +37,7 @@ public function relations()
     );
 }
 
-One can specify post-JOIN operations (i.e. use|force|ignore index()) in relational queries like the following:
+一个可以在关系查询中指定 post-JOIN 操作(比如. use|force|ignore index())，就下面这样： 
 
 $users=User::model()->findAll(array(
     'select'=>'t.id,t.name',
@@ -48,9 +50,12 @@ $users=User::model()->findAll(array(
     ),
 ));
 
-It's described in detail in "Post-JOIN operations" section of "Relational Active Record" chapter of the guide.
+在指南的"Post-JOIN 操作"文章的"Relational Active Record"章节中有详细描述。
 
 CDbCommand::naturalLeftJoin() and CDbCommand::naturalRightJoin() were added to allow adding corresponding join statements to the command.
+
+CDbCommand::naturalLeftJoin() 和 CDbCommand::naturalRightJoin() 
+
 
 It is now possible to override the models PK using primaryKey() method, even if the table defines one.
 Files
