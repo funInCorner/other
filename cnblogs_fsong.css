@@ -1,0 +1,127 @@
+*,body{margin:0px;padding:0px;}
+a{cursor:pointer;text-decoration: none;}
+a, a:hover {transition: all 0.3s ease 0s;}
+body{font-size:14px;background:#EEE;}
+.clear{clear:both;}
+/**最外层**/
+#home{max-width:100%;z-index: 10;
+position: relative;margin:10px auto;padding:0px 10px;  opacity: 1;box-shadow: 0 0px 0px #E2E2E2;background:none;}
+
+#header{padding-left: 0px;margin-bottom:60px;}
+#main{overflow: hidden;clear: both;padding: 0px!important;margin-top:20px;}
+
+#lnkBlogLogo{left:-20px;background: #FFFFFF;display:none;}
+#header #blogTitle a{text-decoration:none;}
+a#Header1_HeaderTitle{font-size:30px;color:#FFF;text-shadow:0px 3px 5px #FF3366;}
+a#Header1_HeaderTitle:hover{color:#FFF;text-shadow: 0 3px 5px #3181B2;}
+#blogTitle h1{display: inline-block;}
+#blogTitle h2{display: inline-block;font-size: 14px;padding:10px 0 0 0;font-weight: normal;}
+/**navigator**/
+#navigator{clear:both;}
+#navList a[href="http://www.cnblogs.com/"] {
+  color: #FFF!important; 
+}
+ul#navList{list-style: none;margin: 0px;padding: 0px;float: left;}
+ul#navList li{display: block;}
+a.menu:link,a.menu:visited{color:#FFF!important;text-shadow:0px 3px 5px #FF3366;}
+a.menu:hover{border-bottom: 2px solid #FF3366;text-shadow:0px 3px 5px #3181B2;}
+.blogStats{padding-top:25px;}
+
+.day,.newsItem,#blog-calendar,#leftcontentcontainer,.entrylistItem,.commentform,#blog-comments-placeholder{
+   border:0px solid #FFFFFF;
+   background:#FFFFFF;
+   background:rgba(255,255,255,0.3);
+   border-radius:5px;
+   padding:5px 15px;
+}
+
+
+
+
+.c_b_p_desc_readmore{color:#3181B2!important;}
+.cnblogs-post-body,.c_b_p_desc{display: none;}
+a.c_b_p_desc_readmore:hover{background: #3181B2!important;color: #3181B2;}
+.postCon a:hover,.postBody a:hover{background-color:#3181B2;color:#FFFFFF;}
+.dayTitle a:hover{color:#EA957D;}
+.catListTag a{background: none;color: #333;padding:5px; }
+.catListTag a:hover{border-bottom:1px solid #3181B2;}
+#comment_nav{background:#3181B2!important;color: #FFF}
+.topicListFooter a{color: #FFF;}
+#footer{border-top:1px solid #FFFFFF;margin:0px;text-align: left;color:#FFFFFF;}
+#sideBar a:hover{color:#3181B2;}
+/**sideBar**/
+.newsItem{padding:5px 15px;}
+#blog-calendar{margin-bottom:15px;}
+.dayTitle{background: none;padding:5px 0px;margin-bottom: 1px;}
+.dayTitle a{color:#3181B2;}
+.postTitle,.entrylistPosttitle{border:0px;background: none;padding:0px;}
+.postTitle a,.entrylistPosttitle a{display:block;padding:0px;}
+.postTitle a:hover,.entrylistPosttitle a:hover{color:#FFFFFF;text-shadow:0px 0px 5px #3181B2;}
+.postCon a,.postBody a{color: #3181B2;}
+#leftcontentcontainer{padding:0px;}
+#leftcontentcontainer>div{border:none;}
+.catListTitle,.CalTitle{border-bottom: 2px solid #3181B2;}
+#blogCalendar a{padding:2px;background: #3181B2;color:#FFF;}
+#blogCalendar a:hover{background: #FFF;color:#000;}
+.catListEssay a:link,.catListEssay ul li a:visited{display: block;padding:5px 0;}
+.catListEssay a:hover{display: block;padding:5px 0;background:#3181B2!important;color:#FFF!important; }
+.catListPostCategory a,.catListPostArchive a,.catListArticleCategory a{display: block;padding:5px 0px; }
+.post{background:#FFFFFF;background:rgba(255,255,255,0.3);padding:5px 15px;}
+
+
+@keyframes myfirst
+{
+from {background: red;}
+to {background: yellow;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+from {background: red;}
+to {background: yellow;}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+from {background: red;}
+to {background: yellow;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+from {background: red;}
+to {background: yellow;}
+}
+
+
+
+/**返回头部**/
+.scrolltopbox{
+transition: all .5s;
+-moz-transition:all .5s; /* Firefox 4 */
+-webkit-transition: all .5s; /* Safari 和 Chrome */
+-o-transition: all .5s; /* Opera */
+position:fixed;
+top:90%;
+right:1%;
+display:inline-block;
+width:46px;
+height:46px;
+background:url("http://images.cnblogs.com/cnblogs_com/fsong/605316/o_5-120601160020.png") no-repeat 0 0 #FFFFFF;
+cursor:pointer;
+z-index:3000;
+ _position:absolute; 
+  _top:expression(documentElement.scrollTop + documentElement.clientHeight * 4/5 + "px") 
+}
+
+a.scrolltopbox:visited,a.scrolltopbox:link{
+background-position:0px 0px ;
+}
+a.scrolltopbox:hover{
+background-position:0px -47px;
+}
+.dayTitle{
+text-align:left;
+}
+.postCon{padding:0px;}
+.postDesc{float:none;text-align:left;padding:0px;margin:0px;display:none;}
