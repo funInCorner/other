@@ -1,18 +1,11 @@
 ArrayHelper
 ===========
 
-Additionally to the [rich set of PHP array functions](http://php.net/manual/en/book.array.php), the Yii array helper provides
-extra static methods allowing you to deal with arrays more efficiently.
-
 [丰富设置的PHP](http://php.net/manual/zh/book.array.php)附加的数组函数，Yii 数组辅助函数提供了额外的静态方法让你更有效率的处理数组。
 
 ## Getting Values <span id="getting-values"></span>
 
 ## 获取值 <span id="getting-values"></span>
-
-Retrieving values from an array, an object or a complex structure consisting of both using standard(标准) PHP is quite(完全)
-repetitive(重复的，反复的). You have to check if key exists with `isset` first, then if it does you're getting it, if not,
-providing default value:
 
 从一个数组中再获得值， 一个对象或者使用标准PHP是完全的反复由一个复杂结构组成.你不得不首先使用`isset`检查key是否存在,然后如果存在你就获取到了它，如果不存在，
 预设默认值
@@ -33,25 +26,20 @@ $array = [
 $value = isset($array['foo']['bar']->name) ? $array['foo']['bar']->name : null;
 ```
 
-Yii provides a very convenient method to do it:
 Yii 提供了一个非常方便的方法来处理它:
 
 ```php
 $value = ArrayHelper::getValue($array, 'foo.bar.name');
 ```
 
-First method argument is where we're getting value from. Second argument specifies how to get the data. It could be one
-of the following:
-
 第一个方法参数是我们从哪里获取值.第二个参数定义如何去获取数据.它可以为一下的其中一个:
 
-- 数组key的名称或者获得值对象的属性名称
-- 
-- Name of array key or object property to retrieve(再获得) value from.
-- Set of dot separated array keys or object property names. The one we've used in the example above.
-- A callback returning a value.
+- 数组键名或者获得值对象的属性名称
+- 使用点号分割的数组key或者对象的属性名称。这个我们已经在上面的案列使用过了
+- 一个回调函数返回一个值
 
-The callback should be the following:
+这个回调函数应该是下列的:
+
 
 ```php
 $fullName = ArrayHelper::getValue($user, function ($user, $defaultValue) {
@@ -59,27 +47,26 @@ $fullName = ArrayHelper::getValue($user, function ($user, $defaultValue) {
 });
 ```
 
-Third optional argument is default value which is `null` if not specified. Could be used as follows:
+第三个可选择的参数是默认值，如果没有指定第三个参数，默认值是`null`.也可以使用下列的:
 
 ```php
 $username = ArrayHelper::getValue($comment, 'user.username', 'Unknown');
 ```
 
-In case you want to get the value and then immediately remove it from array you can use `remove` method:
+
+假设你想要获取值和然后马上从数组中移除它,你可以使用`remove`方法:
 
 ```php
 $array = ['type' => 'A', 'options' => [1, 2]];
 $type = ArrayHelper::remove($array, 'type');
 ```
 
-After executing the code `$array` will contain `['options' => [1, 2]]` and `$type` will be `A`. Note that unlike
-`getValue` method, `remove` supports simple key names only.
+在执行了代码之后,`$array` 将会等于 `['options' => [1, 2]]` 和 `$type` 将会是 `A`.注意这和`getValue`方法不同,`remove`方法只支持简单的键名. 
 
+## 检查键名存在<span id="checking-existence-of-keys"></span>
 
-## Checking Existence of Keys <span id="checking-existence-of-keys"></span>
-
-`ArrayHelper::keyExists` works the same way as [array_key_exists](http://php.net/manual/en/function.array-key-exists.php)
-except that it also supports case-insensitive key comparison. For example,
+`ArrayHelper::keyExists` 工作原理和[array_key_exists](http://php.net/manual/en/function.array-key-exists.php)差不多,除了
+`array_key_exists`同样支持区分大小写键名进行比较.比如:
 
 ```php
 $data1 = [
@@ -95,9 +82,9 @@ if (!ArrayHelper::keyExists('username', $data1, false) || !ArrayHelper::keyExist
 }
 ```
 
-## Retrieving Columns <span id="retrieving-columns"></span>
+## 检索列 <span id="retrieving-columns"></span>
 
-Often you need to get a column of values from array of data rows or objects. Common example is getting a list of IDs.
+你经常需要从由数据行组成的数组或者对象中获取一列值.通常情况下是根据许多id获取一列数据.
 
 ```php
 $data = [
@@ -107,10 +94,9 @@ $data = [
 $ids = ArrayHelper::getColumn($array, 'id');
 ```
 
-The result will be `['123', '345']`.
+结果将是 `['123', '345']`.
 
-If additional transformations are required or the way of getting value is complex, second argument could be specified
-as an anonymous function:
+如果额外的数据装换是必须的或者获取数据的方式是复杂的,第二个参数可以是一个匿名函数:
 
 ```php
 $result = ArrayHelper::getColumn($array, function ($element) {
@@ -119,11 +105,14 @@ $result = ArrayHelper::getColumn($array, function ($element) {
 ```
 
 
-## Re-indexing Arrays <span id="reindexing-arrays"></span>
+## 数组索引重建
 
-In order to index an array according to a specified key, the `index` method can be used. The input array should be
+In order to index an array according to(按照 ; 根据 ; 依据 ; 依照) a specified key, the `index` method can be used. The input array should be
 multidimensional or an array of objects. The key can be a key name of the sub-array, a property name of object, or
 an anonymous function which returns the key value given an array element.
+
+目的是根据一个指定的键名来索引一个数组,那么`index`方法可以使用.
+
 
 If a key value is null, the corresponding array element will be discarded and not put in the result. For example,
 
