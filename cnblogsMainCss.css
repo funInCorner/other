@@ -1,0 +1,175 @@
+*,body{margin:0px;padding:0px;}
+a{cursor:pointer;text-decoration: none;}
+a, a:hover {transition: all 0.3s ease 0s;}
+body{font-size:14px;background:url('http://images.cnblogs.com/cnblogs_com/fsong/605316/o_05.jpg') no-repeat fixed top; }
+.clear{clear:both;}
+/**最外层**/
+#home{/*border:1px solid red;width:100%;*/max-width:100%;z-index: 10;
+position: relative;margin:10px auto;padding:0px 10px;  opacity: 0.99;}
+
+#header{padding-left: 0px;}
+#lnkBlogLogo{left:-20px;background: #3181B2;}
+#header #blogTitle a{text-decoration:none;}
+a#Header1_HeaderTitle{font-size:30px;color:#3181B2;text-shadow: 0 0 10px #222;}
+a#Header1_HeaderTitle:hover{color:#FFF;text-shadow: 0 0 15px #FF3366;}
+#blogTitle h1{display: inline-block;}
+#blogTitle h2{display: inline-block;font-size: 14px;padding:10px 0 0 0;font-weight: normal;}
+/**navigator**/
+#navigator{clear:both;}
+ul#navList{list-style: none;margin: 0px;padding: 0px;float: left;}
+ul#navList li{display: block;}
+a.menu:link,a.menu:visited{color:#3181B2!important;}
+a.menu:hover{border-bottom: 2px solid #3181B2;}
+.blogStats{padding-top:25px;}
+#main{overflow: hidden;clear: both;padding: 0px!important;}
+.dayTitle{background: #882E30;}
+.postTitle{border-left:5px solid #3181B2;background: none;}
+.postCon a,.postBody a{color: #3181B2;}
+.c_b_p_desc_readmore{color:#882E30!important;}
+a.c_b_p_desc_readmore:hover{background: #882E30!important;color: #FFF;}
+.postCon a:hover,.postBody a:hover{background-color:#3181B2;color:#fff;}
+.dayTitle a:hover{color:#EA957D;}
+.catListTag a{background: none;color: #333;padding:5px; }
+.catListTag a:hover{border-bottom:1px solid #3181B2;}
+#comment_nav{background:#3181B2!important;color: #FFF}
+.topicListFooter a{color: #3181B2;}
+#footer{border-top:1px solid #3181B2;margin:0px;text-align: left;}
+#sideBar a:hover{color:#3181B2;}
+/**sideBar**/
+.newsItem,#leftcontentcontainer>div{border:0px solid #3983CB;}
+.newsItem,#leftcontentcontainer>div{padding:0px;}
+.catListTitle,.CalTitle{border-bottom: 2px solid #3181B2;}
+#blogCalendar a{padding:2px;background: #3181B2;color:#FFF;}
+#blogCalendar a:hover{background: #FFF;color:#000;}
+.catListEssay a:link,.catListEssay ul li a:visited{display: block;padding:5px 0;}
+.catListEssay a:hover{display: block;padding:5px 0;background:#3181B2!important;color:#FFF!important; }
+.catListPostCategory a,.catListPostArchive a,.catListArticleCategory a{display: block;padding:5px 0px; }
+
+/**css3 background slidershow**/
+.cb-slideshow,
+.cb-slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+}
+.cb-slideshow:after { 
+    content: '';
+}
+.cb-slideshow li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 120s linear infinite 0s;
+    -moz-animation: imageAnimation 120s linear infinite 0s;
+    -o-animation: imageAnimation 120s linear infinite 0s;
+    -ms-animation: imageAnimation 120s linear infinite 0s;
+    animation: imageAnimation 120s linear infinite 0s; 
+}
+
+.cb-slideshow li:nth-child(1) span { 
+    background-image: url('http://images.cnblogs.com/cnblogs_com/fsong/605316/o_01.jpg'); 
+}
+.cb-slideshow li:nth-child(2) span { 
+    background-image: url('http://images.cnblogs.com/cnblogs_com/fsong/605316/o_02.jpg');
+    -webkit-animation-delay: 20s;
+    -moz-animation-delay: 20s;
+    -o-animation-delay: 20s;
+    -ms-animation-delay: 20s;
+    animation-delay: 20s; 
+}
+.cb-slideshow li:nth-child(3) span { 
+    background-image: url('http://images.cnblogs.com/cnblogs_com/fsong/605316/o_03.jpg');
+    -webkit-animation-delay: 40s;
+    -moz-animation-delay: 40s;
+    -o-animation-delay: 40s;
+    -ms-animation-delay: 40s;
+    animation-delay: 40s; 
+}
+.cb-slideshow li:nth-child(4) span { 
+    background-image: url('http://images.cnblogs.com/cnblogs_com/fsong/605316/o_04.jpg');
+    -webkit-animation-delay: 60s;
+    -moz-animation-delay: 60s;
+    -o-animation-delay: 60s;
+    -ms-animation-delay: 60s;
+    animation-delay: 60s; 
+}
+.cb-slideshow li:nth-child(5) span { 
+    background-image: url('http://images.cnblogs.com/cnblogs_com/fsong/605316/o_05.jpg');
+    -webkit-animation-delay: 80s;
+    -moz-animation-delay: 80s;
+    -o-animation-delay: 80s;
+    -ms-animation-delay: 80s;
+    animation-delay: 80s; 
+}
+.cb-slideshow li:nth-child(6) span { 
+    background-image: url('http://images.cnblogs.com/cnblogs_com/fsong/605316/o_06.jpg');
+    -webkit-animation-delay: 100s;
+    -moz-animation-delay: 100s;
+    -o-animation-delay: 100s;
+    -ms-animation-delay: 100s;
+    animation-delay: 100s; 
+}
+
+/* Animation for the slideshow images */
+@-webkit-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -webkit-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -webkit-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-moz-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -moz-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -moz-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-o-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -o-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -o-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-ms-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -ms-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -ms-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@keyframes imageAnimation { 
+    0% { opacity: 0;
+    animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+/* Show at least something when animations not supported */
+.no-cssanimations .cb-slideshow li span{
+    opacity: 1;
+}
