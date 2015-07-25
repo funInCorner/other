@@ -107,14 +107,10 @@ $result = ArrayHelper::getColumn($array, function ($element) {
 
 ## 数组索引重建
 
-In order to index an array according to(按照 ; 根据 ; 依据 ; 依照) a specified key, the `index` method can be used. The input array should be
-multidimensional or an array of objects. The key can be a key name of the sub-array, a property name of object, or
-an anonymous function which returns the key value given an array element.
+为了索引一个数组是根据一个指定的键名,那`index`方法可以使用.输入的数组应该是多维的或者一个对象数组.这键名可以是每个子数组中的键名,一个对象的属性名,
+或者一个匿名函数返回给定的键值数组元素。
 
-目的是根据一个指定的键名来索引一个数组,那么`index`方法可以使用.
-
-
-If a key value is null, the corresponding array element will be discarded and not put in the result. For example,
+如果一个键名的值是null,相应的数组元素将会是丢弃的和不会放入到结果中.例如,
 
 ```php
 $array = [
@@ -135,11 +131,11 @@ $result = ArrayHelper::index($array, function ($element) {
 ```
 
 
-## Building Maps <span id="building-maps"></span>
+## 建立 Maps <span id="building-maps"></span>
 
-In order to build a map (key-value pairs) from a multidimensional array or an array of objects you can use `map` method.
-The `$from` and `$to` parameters specify the key names or property names to set up the map. Optionally, one can further
-group the map according to a grouping field `$group`. For example,
+
+为了从一个多维数组或者一个对象数组中建立一个map(键值对),你可以使用`map`方法.`$from` 和 `$to` 参数指定键名或者属性名称来组建这个map.
+视需要,一个可以进一步地根据一个分组字段`$group`来分组map.
 
 ```php
 $array = [
@@ -170,9 +166,10 @@ $result = ArrayHelper::map($array, 'id', 'name', 'class');
 ```
 
 
-## Multidimensional Sorting <span id="multidimensional-sorting"></span>
+## 多维排序 <span id="multidimensional-sorting"></span>
 
 `multisort` method helps to sort an array of objects or nested arrays by one or several keys. For example,
+`multisort` 方法帮助排序一个对象数组或者嵌套的数组,或者几个键名.比如,
 
 ```php
 $data = [
@@ -183,7 +180,7 @@ $data = [
 ArrayHelper::multisort($data, ['age', 'name'], [SORT_ASC, SORT_DESC]);
 ```
 
-After sorting we'll get the following in `$data`:
+排序之后我们将会在`$data`中获取下列的:
 
 ```php
 [
@@ -193,8 +190,7 @@ After sorting we'll get the following in `$data`:
 ];
 ```
 
-Second argument that specifies keys to sort by can be a string if it's a single key, an array in case of multiple keys
-or an anonymous function like the following one:
+第二个参数指定键名来排序,如果它是一个单一的键名,可以是一个字符串,假设很多键名,可以是一个数组,或者一个匿名函数像下列的一个:
 
 ```php
 ArrayHelper::multisort($data, function($item) {
@@ -205,6 +201,9 @@ ArrayHelper::multisort($data, function($item) {
 Third argument is direction. In case of sorting by a single key it could be either `SORT_ASC` or
 `SORT_DESC`. If sorting by multiple values you can sort each value differently by providing an array of
 sort direction.
+
+第三个参数是引导.假设根据一个单一的键名进行排序,它可以是`SORT_ASC`或者`SORT_DESC`中两者之中任一的.
+如果是根据很多值进行排序，你可以
 
 Last argument is PHP sort flag that could take the same values as the ones passed to
 PHP [sort()](http://php.net/manual/en/function.sort.php).
