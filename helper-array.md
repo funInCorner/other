@@ -3,8 +3,6 @@ ArrayHelper
 
 [丰富设置的PHP](http://php.net/manual/zh/book.array.php)附加的数组函数，Yii 数组辅助函数提供了额外的静态方法让你更有效率的处理数组。
 
-## Getting Values <span id="getting-values"></span>
-
 ## 获取值 <span id="getting-values"></span>
 
 从一个数组中再获得值， 一个对象或者使用标准PHP是完全的反复由一个复杂结构组成.你不得不首先使用`isset`检查key是否存在,然后如果存在你就获取到了它，如果不存在，
