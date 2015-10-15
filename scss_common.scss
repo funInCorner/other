@@ -1,0 +1,199 @@
+$border-width:1px;
+$none-width:0px;
+//生成测试边框，由$border-width进行控制,@param only color
+@mixin border($color){
+  @if $border-width == 1px{
+    border:$border-width solid $color;
+  }
+}
+
+//生成边框
+@mixin borders($border-width,$border-align:null,$border-style:solid,$border-color:red){
+  @if $border-width != 0px{
+    border#{$border-align}:$border-width $border-style $border-color;
+  }
+
+}
+
+
+// ==================================================
+// $Media Query @Mixin
+// ==================================================
+
+// Constraints
+$min: min-width;
+$max: max-width;
+
+@mixin mediaQuery($constraint, $viewport1, $viewport2: null) {
+
+  @if $constraint == $min {
+
+    @media only screen and ($min: $viewport1) {
+      @content;
+    }
+
+  } @else if $constraint == $max {
+
+    @media only screen and ($max: $viewport1) {
+      @content;
+    }
+
+  } @else {
+
+    @media only screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+
+  }
+
+}
+
+
+
+
+
+@mixin animation($delay, $duration, $iteration, $animation, $speed-curve) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-iteration-count: $iteration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-timing-function: $speed-curve;
+  -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-iteration-count: $iteration;
+  -moz-animation-name: $animation;
+  -moz-animation-timing-function: $speed-curve;
+  -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  -o-animation-delay: $delay;
+  -o-animation-duration: $duration;
+  -o-animation-iteration-count: $iteration;
+  -o-animation-name: $animation;
+  -o-animation-timing-function: $speed-curve;
+  -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  -ms-animation-delay: $delay;
+  -ms-animation-duration: $duration;
+  -ms-animation-iteration-count: $iteration;
+  -ms-animation-name: $animation;
+  -ms-animation-timing-function: $speed-curve;
+  -ms-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration;
+  animation-name: $animation;
+  animation-timing-function: $speed-curve;
+  animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin css3($property, $value) {
+    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+        #{$prefix}#{$property}: $value;
+    }
+}
+
+@mixin transition($value,$transition-timing-function:linear){
+   @each $prefix in -webkit-, -moz-, -ms-, -o-, ''{
+     #{$prefix}transition: $value $transition-timing-function;
+   }
+}
+
+@mixin transitions($value,$obj:all,$transition-timing-function:linear){
+   @each $prefix in -webkit-, -moz-, -ms-, -o-, ''{
+     #{$prefix}transition:$obj $value $transition-timing-function;
+   }
+}
+
+@mixin scale($value){
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, ''{
+    #{$prefix}transform:scale($value);
+  }
+}
+
+@mixin rotate($value){
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, ''{
+    #{$prefix}transform:rotate($value);
+  }
+}
+
+@mixin translate($x,$y){
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, ''{
+    #{$prefix}transform:translate($x,$y);
+  }
+}
+
+@mixin mytransform($value,$scale){
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, ''{
+    #{$prefix}transform:rotate($value) scale($scale);
+  }
+}
+
+@mixin hbboxshadow($x:0px,$y:0px,$depet:0px,$color:#FFFFFF){
+  @each $prefix in -webkit-, -moz-, ''{
+    #{$prefix}box-shadow:$x $y $depet $color;
+  }
+}
+
+
+@mixin noneborder($color)
+{
+   border:$none-width solid $color;
+}
+
+
+@mixin font-face($font-family,$file-path,$font-weight:normal,$font-style:normal,$asset-pipeline: false){
+  @font-face {
+    font: {
+      family: $font-family;
+      weight: $font-weight;
+      style: $font-style;
+    }
+
+    @if $asset-pipeline == true {
+      src: font-url("#{$file-path}.eot");
+      src: font-url("#{$file-path}.eot?#iefix") format("embedded-opentype"),
+      font-url("#{$file-path}.woff") format("woff"),
+      font-url("#{$file-path}.ttf") format("truetype"),
+      font-url("#{$file-path}.svg##{$font-family}") format("svg");
+    }
+    @else {
+      src: url("#{$file-path}.eot");
+      src: url("#{$file-path}.eot?#iefix") format("embedded-opentype"),
+      url("#{$file-path}.woff") format("woff"),
+      url("#{$file-path}.ttf") format("truetype"),
+      url("#{$file-path}.svg##{$font-family}") format("svg");
+    }
+  }
+}
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
