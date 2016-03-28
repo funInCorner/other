@@ -3,7 +3,7 @@ a{cursor:pointer;text-decoration: none;}
 a, a:hover {transition: all 0.3s ease 0s;}
 body{font-size:14px;background:#EEE;}
 .clear{clear:both;}
-/**最外层**/
+//最外层
 #home{max-width:100%;z-index: 10;
 position: relative;margin:10px auto;padding:0px 10px;  opacity: 1;box-shadow: 0 0px 0px #E2E2E2;background:none;}
 
@@ -19,7 +19,7 @@ a#Header1_HeaderTitle:hover{color:#FFF;text-shadow: 0 3px 5px #3181B2;}
 /**navigator**/
 #navigator{clear:both;}
 #navList a[href="http://www.cnblogs.com/"] {
-  color: #FFF!important; 
+  color: #FFF!important;
 }
 ul#navList{list-style: none;margin: 0px;padding: 0px;float: left;}
 ul#navList li{display: block;}
@@ -110,8 +110,8 @@ height:46px;
 background:url("http://images.cnblogs.com/cnblogs_com/fsong/605316/o_5-120601160020.png") no-repeat 0 0 #FFFFFF;
 cursor:pointer;
 z-index:3000;
- _position:absolute; 
-  _top:expression(documentElement.scrollTop + documentElement.clientHeight * 4/5 + "px") 
+ _position:absolute;
+  _top:expression(documentElement.scrollTop + documentElement.clientHeight * 4/5 + "px")
 }
 
 a.scrolltopbox:visited,a.scrolltopbox:link{
