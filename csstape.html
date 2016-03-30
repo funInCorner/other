@@ -7,14 +7,15 @@ body{
 	background:rgba(0,0,0,0.5);
 	color:#FFFFFF;
 	text-align:center;
+	margin: 0px;
+	padding: 0px;
 }
 
 .container{
-text-align:left;
+	text-align:left;
 	margin:0 auto;
-	width:970px;
+	width:960px;
 	padding:10px;
-	border:1px solid orange;
 	height:360px;
 }
 
@@ -85,56 +86,56 @@ to {
 .trans1
 {
 animation: myfirst 1s linear  infinite ;
--moz-animation: myfirst 1s linear  infinite ;	
--webkit-animation: myfirst 1s linear  infinite ;	
--o-animation: myfirst 1s linear infinite ;	
+-moz-animation: myfirst 1s linear  infinite ;
+-webkit-animation: myfirst 1s linear  infinite ;
+-o-animation: myfirst 1s linear infinite ;
 }
 
 .trans2
 {
 animation: myfirst 2s linear  infinite ;
--moz-animation: myfirst 2s linear  infinite ;	
--webkit-animation: myfirst 2s linear  infinite ;	
--o-animation: myfirst 2s linear infinite ;	
+-moz-animation: myfirst 2s linear  infinite ;
+-webkit-animation: myfirst 2s linear  infinite ;
+-o-animation: myfirst 2s linear infinite ;
 }
 
 
 
 
 .tapbox{
-position:relative;
-width:500px;
-height:300px;
-border:1px solid #FFFFFF;
--moz-border-radius:8px;      
-    -webkit-border-radius:8px;   
-    border-radius:8px;  
+	position:relative;
+	width:500px;
+	height:300px;
+	border:1px solid #FFFFFF;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	margin:0 auto;
 }
 
 #bingtu{
-position:absolute;
-left:0px;
-top:10px;
+	position:absolute;
+	left:5px;
+	top:10px;
 }
-
 #trans{
 	position:absolute;
-	right:0px;
+	right:5px;
 	top:10px;
 }
 
 #topline{
 position:absolute;
 top:9px;
-left:0px;
+left:3px;
 border-top:2px solid #000000;
 border-left:2px solid #000000;
 border-right:2px solid #000000;
-width:99%;
-height:40px;
--moz-border-radius: 20px 20px 18px 18px ;      
-    -webkit-border-radius: 20px 20px 18px 18px;   
-    border-radius:20px 20px 18px 18px;            
+width:490px;
+height:30px;
+-moz-border-radius: 20px 20px 5px 5px ;
+-webkit-border-radius: 20px 20px 5px 5px;
+border-radius:20px 20px 5px 5px;
 }
 
 
@@ -163,12 +164,10 @@ right:80px;
 	<canvas id="bingtu"  width="40" height="40" class="trans1"></canvas>
 	<canvas id="trans" width="40" height="40" class="trans1"></canvas>
 	<div id="topline"  height="10px"></div>
-	
-	
+
+
 	<canvas id="ci-left"   width="80" height="80" class="trans1 ci-left"></canvas>
 	<canvas id="ci-right"   width="80" height="80" class="trans1 ci-right"></canvas>
-	
-	
 
 
 	</div>
@@ -194,14 +193,14 @@ function drawtran(id){
 			}else{
 				ctx.arc(20,20,18,startPoint - 0.5,startPoint-Math.PI*2*(data[i]/100) + 0.5,true);
 			}
-			
-			
-			
+
+
+
 			ctx.fill();
 			ctx.stroke();
 			startPoint -= Math.PI*2*(data[i]/100);
 	}
-	
+
 	//画第二个同心圆的圆
 	ctx.fillStyle = "#FFFFFF";
 	ctx.strokeStyle ="#FFFFFF";
@@ -209,13 +208,13 @@ function drawtran(id){
 	ctx.arc(20,20,8,0,Math.PI*2);
 	ctx.fill();
 	ctx.stroke();
-	
+
 	//最外层的白色框
 	ctx.fillStyle = "#FFFFFF";
 	ctx.beginPath();
 	ctx.arc(20,20,19,0,Math.PI*2);
 	ctx.stroke();
-	
+
 	//中间一点黑，哈哈
 	ctx.fillStyle = "#333333";
 	ctx.beginPath();
@@ -244,7 +243,7 @@ function drawtran2(id){
 			ctx.stroke();
 			startPoint -= Math.PI*2*(data[i]/100);
 	}
-	
+
 	//最外面的圈圈
 	ctx.fillStyle = "#FFFFFF";
 	ctx.strokeStyle ="#FFFFFF";
@@ -252,13 +251,13 @@ function drawtran2(id){
 	ctx.arc(40,40,20,0,Math.PI*2);
 	ctx.fill();
 	ctx.stroke();
-	
+
 	//中间的圈圈
 	ctx.fillStyle = "#FFFFFF";
 	ctx.beginPath();
 	ctx.arc(40,40,39,0,Math.PI*2);
 	ctx.stroke();
-	
+
 	//中间的黑色点点
 	ctx.fillStyle = "#333333";
 	ctx.beginPath();
